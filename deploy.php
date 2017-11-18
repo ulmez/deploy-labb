@@ -4,10 +4,10 @@ namespace Deployer;
 require 'recipe/common.php';
 
 // Project name
-set('application', 'my_project');
+set('application', 'deploy-labb-app');
 
 // Project repository
-set('repository', '');
+set('repository', 'git@github.com:ulmez/deploy-labb.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
