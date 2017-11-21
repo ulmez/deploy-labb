@@ -23,7 +23,7 @@ set('allow_anonymous_stats', false);
 // Hosts
 
 host('ssh.binero.se')
-    ->set('deploy_path', '~/test.chas.academy/DEPLOY_TEST')
+    ->set('deploy_path', '~/test.chas.academy')
     ->user('226748_ulme')
     ->port(22);    
     
