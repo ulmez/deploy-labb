@@ -23,7 +23,7 @@ set('allow_anonymous_stats', false);
 // Hosts
 
 host('ssh.binero.se')
-    ->set('deploy_path', '~/test.chas.academy/public_html')
+    ->set('deploy_path', '~/test.chas.academy')
     ->user('226748_ulme')
     ->port(22);    
     
@@ -31,6 +31,11 @@ host('ssh.binero.se')
 // Tasks
 
 desc('Deploy your project');
+
+task('deploy:custom_webroot', function() {
+    run("cd {{deploy_path}} && ln -sfn {{release_path}} public_html/web");
+});
+
 task('deploy', [
     'deploy:info',
     'deploy:prepare',
@@ -48,3 +53,5 @@ task('deploy', [
 
 // [Optional] If deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
+
+after('deploy', 'deploy:custom_webroot');

@@ -1,1 +1,1 @@
-<?php echo "Hello Chas Academy!"; ?>
+<?php echo "Hello Chas Academy 2!"; ?>
